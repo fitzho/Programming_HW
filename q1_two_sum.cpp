@@ -7,19 +7,23 @@ int determine_input(int);
 
 int main() { 
 		
-		int nums[]={2,11,7,15};
-	    int target = 9;
-	    for (int i=0;i<=(sizeof(nums)/sizeof(nums[0]));i++)
+		int nums[]={0,4,3,0};
+	    int target = 0;
+	    int ans[2];
+	    
+	    for (int i=0;i<=sizeof(nums)/sizeof(nums[0])-2;i++)
         {
-        	for (int j=i;j<=(sizeof(nums)/sizeof(nums[0]));j++)
+        	for (int j=i+1;j<=sizeof(nums)/sizeof(nums[0])-1;j++)
             {
                 if (nums[i]+nums[j]==target)
                 {
-                	cout<<"num1 = " << i  << endl;
-                	cout<<"num2 = " << j  << endl;
-			    }
+                    ans[0]=i;
+                    ans[1]=j;
+                	cout << ans[0] << " " << ans[1] << endl;
+                }
             }
         }
-    return 0;
+        
+        return 0;
 }
 
